@@ -30,19 +30,13 @@ public class RegistrationServiceImpl implements RegistrationService {
         if (fromDB != null) {
             throw new Status421EmailBusyException();
         }
-        if (user.getEmail().isBlank() || user.getEmail().isBlank()) {
-            throw new IllegalArgumentException();
-        }
-        if (user.getPassword().isBlank() || user.getPassword().isBlank()) {
-            throw new IllegalArgumentException();
-        }
     }
 
     private User convertToUser(UserDTO userDTO) {
         User user = new User();
+        user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
         user.setName(userDTO.getName());
-        user.setEmail(userDTO.getEmail());
         user.setRole(Role.valueOf(userDTO.getRole()));
         return user;
     }
