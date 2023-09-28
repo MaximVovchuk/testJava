@@ -7,6 +7,7 @@ To run this project, follow these steps:
 2. Open a terminal and navigate to the project's root folder.
 
 3. Run the following command to create a container with the required database:
+   
    docker-compose up
 
 This command will set up the necessary database environment.
