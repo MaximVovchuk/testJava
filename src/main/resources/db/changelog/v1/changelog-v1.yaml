@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: users
+      author: maskym_vovchuk
+      changes:
+        - sqlFile:
+            path: 0001-user.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: goods
+      author: maskym_vovchuk
+      changes:
+        - sqlFile:
+            path: 0002-goods.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: orders
+      author: maskym_vovchuk
+      changes:
+        - sqlFile:
+            path: 0003-order.sql
+            relativeToChangelogFile: true

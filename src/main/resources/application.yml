@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: testUser
+    password: testUserPassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/changelog/v1/changelog-v1.yaml
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+jwt_secret: testJavaVovchukSecret
+springdoc:
+  swagger-ui:
+    path: /swagger
+  packages-to-scan: com.teamvoy.testJava.controllers
+  paths-to-match: /goods/**, /client/**, /auth/**, /manager/**

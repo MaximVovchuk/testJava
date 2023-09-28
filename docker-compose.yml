@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    hostname: test-database-postgres
+    container_name: test-database-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: testUser
+      POSTGRES_PASSWORD: testUserPassword
+      POSTGRES_DB: testdb
+    restart: unless-stopped
